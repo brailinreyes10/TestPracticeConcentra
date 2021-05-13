@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+}
+
+<script type="text/javascript">
+
+    function goBack() {
+        window.location.href = '/Users/Index';
+    }
+
+</script>
+
+<div>
+
+    <div style="margin-top:-2%; margin-left:-20%; text-align:left">
+        <button class="btn btn-dark" onclick="goBack()"><b><</b></button>
+    </div>
+
+    <h2>Detail of user</h2>
+
+    <hr style="border:0px;border-top:1px groove;" />
+
+    @if (ViewBag.Sucess)
+    {
+        //Set Data
+
+        <div>
+            <div>
+                <img style="width:150px; height:150px; border-radius:75px; margin-right:25px" src="@ViewBag.User.PictureLg" alt="image" />
+
+                <label style="font:35px bold;">@ViewBag.User.Abbreviation</label>
+                <label style="font:30px bold;">@ViewBag.User.FisrtName @ViewBag.User.LastName</label>
+
+                <h1 style="margin-bottom:0; margin-top:-55px"></h1>
+                <label style="margin-left: 180px; font:20px bold;">@ViewBag.User.Age years</label>
+
+
+            </div>
+            <br />
+
+            <label style="font:20px bold italic; margin-top:25px; margin-left:20px; margin-bottom:10px">Personal information</label>
+            <hr style="margin-top:0; border:0px;border-top:1px groove;" />
+
+            @*Personal Information*@
+            <div style="margin-left:20px">
+
+                <div class="row">
+                    <div class="col-6">
+
+                        @*Date of birth*@
+                        <label style="font:20px; margin-top:25px;  vertical-align:middle">
+                            <img width="25" height="25" src="https://img.icons8.com/material-rounded/72/birthday.png" alt="img" />
+                            Date of Birth
+                        </label>
+                        <h1 style="margin-bottom:0; margin-top:-12px"></h1>
+                        <label style="font-size:14px; margin-left:30px"><b>@ViewBag.User.DateOfBirth</b></label>
+                    </div>
+
+                    <div class="col-6">
+
+                        @*Location*@
+                        <label style="font:20px; margin-top:25px;  vertical-align:middle">
+                            <img width="25" height="25" src="https://img.icons8.com/fluent-systems-filled/344/worldwide-location.png" alt="img" />
+                            Location
+                        </label>
+                        <h1 style="margin-bottom:0; margin-top:-12px"></h1>
+                        <label style="font-size:14px; margin-left:30px"><b>@ViewBag.User.Location</b></label>
+                    </div>
+
+                </div>
+
+                @*Gender*@
+                <label style="font:20px; margin-top:25px;  vertical-align:middle">
+                    <img width="25" height="25" src="https://img.icons8.com/ios-filled/344/gender.png" alt="img" />
+                    Gender
+                </label>
+                <h1 style="margin-bottom:0; margin-top:-12px"></h1>
+                <label style="font-size:14px; margin-left:30px"><b>@ViewBag.User.Gender</b></label>
+
+                <br />
+
+            </div>
+
+
+            <label style="font:20px bold italic; margin-top:25px; margin-left:20px; margin-bottom:10px">Contact information</label>
+            <hr style="margin-top:0; border:0px;border-top:1px groove;" />
+
+
+            <div style="margin-left:20px">
+
+                @*Phone*@
+                <label style="font:20px; margin-top:25px;  vertical-align:middle">
+                    <img width="25" height="25" src="https://img.icons8.com/android/72/phone.png" alt="img" />
+                    Phone Number
+                </label>
+                <h1 style="margin-bottom:0; margin-top:-12px"></h1>
+                <label style="font-size:14px; margin-left:30px"><b>@ViewBag.User.Phone</b></label>
+
+                <br />
+
+                @*Email*@
+                <label style="font:20px; margin-top:25px;  vertical-align:middle">
+                    <img width="25" height="25" src="https://img.icons8.com/wired/344/email.png" alt="img" />
+                    Email
+                </label>
+                <h1 style="margin-bottom:0; margin-top:-12px"></h1>
+                <label style="font-size:14px; margin-left:30px"><b>@ViewBag.User.Email</b></label>
+
+            </div>
+
+            <br />
+
+
+        </div>
+    }
+    else
+    {
+        //Error
+        <h1 class="alert-danger">Ha ocurrido un error</h1>
+    }
+
+</div>
+
+

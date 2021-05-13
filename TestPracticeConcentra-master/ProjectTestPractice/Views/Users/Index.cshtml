@@ -1,0 +1,38 @@
+﻿@{ ViewBag.Title = "Users";
+    Styles.Render("~/Content/css"); }
+
+<script type="text/javascript">
+
+    function SelectUser(userid) {
+        window.location.href = '/Users/Detail/' + userid;
+    }
+
+</script>
+
+<h1>List of Users</h1>
+
+<br/>
+
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col" width="10%"></th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">X</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in ViewBag.Users)
+        {
+            <tr onclick="SelectUser(@u.UserID)">
+                <td > <img style="width:70px; height:70px; border-radius:35px" src="@u.Picture" alt="image" /></td>
+                <td style="vertical-align:middle"> @u.FisrtName</td>
+                <td style="vertical-align:middle"> @u.LastName</td>
+                <td style="vertical-align:middle"><button class="btn btn-link" onclick="alert('Hacer fun para ir al Detail')">Select</button></td>
+            </tr>
+         }
+    </tbody>
+</table>
+
+
