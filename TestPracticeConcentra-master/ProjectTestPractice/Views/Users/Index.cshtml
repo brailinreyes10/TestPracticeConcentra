@@ -9,7 +9,7 @@
 
 </script>
 
-<h1>List of Users</h1>
+<h1>List of users</h1>
 
 <br/>
 
@@ -25,11 +25,11 @@
     <tbody>
         @foreach (var u in ViewBag.Users)
         {
-            <tr onclick="SelectUser(@u.UserID)">
+            <tr>
                 <td > <img style="width:70px; height:70px; border-radius:35px" src="@u.Picture" alt="image" /></td>
                 <td style="vertical-align:middle"> @u.FisrtName</td>
                 <td style="vertical-align:middle"> @u.LastName</td>
-                <td style="vertical-align:middle"><button class="btn btn-link" onclick="alert('Hacer fun para ir al Detail')">Select</button></td>
+                <td style="vertical-align:middle"><button class="btn btn-link" onclick="SelectUser(@u.UserID)">View profile</button></td>
             </tr>
          }
     </tbody>
